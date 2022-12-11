@@ -17,7 +17,8 @@ Glitchには`POST`を受信するコードを書いている。
 様々な文や名前、値などを記録
 
 - **package.json**  
-`npm install`等でインストールしたパッケージのバージョンを記る(または記される
+`npm install "パッケージ名"`等でインストールしたパッケージのバージョンを記る(または記される
+`mpn install`でnode_modulesを作成することも可能
 
 - **package-lock.json**  
 node_moduleフォルダのパッケージ状態が記されているらしい  
