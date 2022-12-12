@@ -10,7 +10,7 @@ const { Client, GatewayIntentBits, Partials, EmbedBuilder, BaseChannel, Applicat
 let scommand = [
 	new SlashCommandBuilder()
 		.setName("help")
-		.setDescription("ヘルプを表示します。")
+		.setDescription("ヘルプを表示します。")                 //探すところ(宿題)12/12 data.jsonの会話をどこで出力しているか
 	,
 	new SlashCommandBuilder()
 		.setName("welcomelocation")
@@ -84,7 +84,7 @@ client.on('messageCreate', message => {
 		for (let i = 0; data.reply.length != i; i++) {
 			for (let Ii = 0; data.reply[i].message.length != Ii; Ii++) {
 				if (message.content.match(data.reply[i].message[Ii])) {
-					message.channel.send(data.reply[i].reply[Math.floor(Math.random() * data.reply[i].reply.length)]);
+					message.channel.send(data.reply[i].reply[Math.floor(Math.random() * data.reply[i].reply.length)]);  //12/12宿題　ここで出力してるっぽい
 				};
 			};
 		};
