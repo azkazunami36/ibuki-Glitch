@@ -4,7 +4,9 @@ const { Client, GatewayIntentBits, Partials, EmbedBuilder, BaseChannel, Applicat
 	client = new Client({
 		partials: [Partials.Channel, Partials.GuildMember, Partials.GuildScheduledEvent, Partials.Message, Partials.Reaction, Partials.ThreadMember, Partials.User],
 		intents: [GatewayIntentBits.DirectMessageReactions, GatewayIntentBits.DirectMessageTyping, GatewayIntentBits.DirectMessages, GatewayIntentBits.GuildBans, GatewayIntentBits.GuildEmojisAndStickers, GatewayIntentBits.GuildIntegrations, GatewayIntentBits.GuildInvites, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildMessageReactions, GatewayIntentBits.GuildMessageTyping, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildPresences, GatewayIntentBits.GuildScheduledEvents, GatewayIntentBits.GuildVoiceStates, GatewayIntentBits.GuildWebhooks, GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent]
+
 	}),
+
 	ytdl = require('ytdl-core'), //YouTube Downloadのコア
 	data = require("./data.json");
 let scommand = [
@@ -84,6 +86,7 @@ client.on('messageCreate', message => {
 		for (let i = 0; data.reply.length != i; i++) {
 			for (let Ii = 0; data.reply[i].message.length != Ii; Ii++) {
 				if (message.content.match(data.reply[i].message[Ii])) {
+					sleep(3000);
 					message.channel.send(data.reply[i].reply[Math.floor(Math.random() * data.reply[i].reply.length)]);  //12/12宿題　ここで出力してるっぽい
 				};
 			};
